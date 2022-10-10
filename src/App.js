@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blogs from './Components/Blogs/Blogs';
 import Home from './Components/Home/Home';
+import NotFound from './Components/NotFound/NotFound';
 import Statistics from './Components/Statistics/Statistics';
 import Main from './Layouts/Main';
 
@@ -25,6 +26,10 @@ function App() {
           element:<Blogs></Blogs>
         }
       ]
+    },
+    {
+      path:'*',
+      element:<NotFound></NotFound>
     }
   ])
   return (
