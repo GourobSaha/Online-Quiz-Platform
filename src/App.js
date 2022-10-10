@@ -1,11 +1,34 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Blogs from './Components/Blogs/Blogs';
+import Home from './Components/Home/Home';
+import Statistics from './Components/Statistics/Statistics';
+import Main from './Layouts/Main';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path:'/',
+      element:<Main></Main>,
+      children:[
+        {
+          path:'/',
+          element: <Home></Home>
+        },
+        {
+          path:'/statistics',
+          element:<Statistics></Statistics>
+        },
+        {
+          path:'/blogs',
+          element:<Blogs></Blogs>
+        }
+      ]
+    }
+  ])
   return (
     <div className="App">
-      <h1 className='text-4xl font-bold'>This the big tag</h1>
-      <p>This is the p tag</p>
-      <button class="btn btn-primary">Button</button>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
