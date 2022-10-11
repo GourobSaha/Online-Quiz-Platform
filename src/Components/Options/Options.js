@@ -20,7 +20,7 @@ const Options = ({option, correctAnswer}) => {
                 onClick={() => radioChangeHandler({option})}
                 type="radio"
                 className="form-radio"
-                name="accountType"
+                name={correctAnswer}
                 value={option}
                 />
                 <span className="ml-2">{option}</span>
