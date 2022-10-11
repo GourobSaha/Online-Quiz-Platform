@@ -9,7 +9,7 @@ const Statistics = () => {
 
   return (
     <div>
-      <div className="w-full">
+      <div className="w-full container mx-auto rounded-lg shadow-lg py-5 pr-7">
         <div className="w-full h-96 mb-8">
           <h1 className="text-center text-3xl font-bold text-sky-900 mb-9">Total Questions of Different Topics</h1>
           <ResponsiveContainer width="100%" height="100%">
