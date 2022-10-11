@@ -15,7 +15,7 @@ const Options = ({option, correctAnswer}) => {
 
     return (
          <div>
-            <label className="flex">
+            <label className="flex text-start bg-white shadow-md p-2 rounded-lg">
                 <input
                 onClick={() => radioChangeHandler({option})}
                 type="radio"
