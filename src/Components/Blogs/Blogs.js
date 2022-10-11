@@ -3,7 +3,8 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <h2>This is blogs</h2>
+            <h1 className="text-center text-3xl font-bold text-sky-900 mb-9">Welcome to QnA</h1>
+            
         </div>
     );
 };

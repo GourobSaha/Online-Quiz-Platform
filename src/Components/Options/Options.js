@@ -1,22 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Options = ({option}) => {
-    // console.log(option)
-const [answer, setAnswer] = useState('');
-const radioChangeHandler = (e) => {
-    setAnswer(e.target.value);
-  };
+
+const Options = ({option, correctAnswer}) => {
+    const radioChangeHandler = ({option}) => {
+        if(option === correctAnswer){
+            toast.success('Yay! Correct Answer.', {position:'top-center', theme:'colored'})
+        }
+        else{
+            toast.error('Oops! Wrong Answer.', {position:'top-center', theme:'colored'})
+        }
+    };
+
     return (
          <div>
             <label className="flex">
                 <input
+                onClick={() => radioChangeHandler({option})}
                 type="radio"
                 className="form-radio"
                 name="accountType"
                 value={option}
                 />
-                <span class="ml-2">{option}</span>
+                <span className="ml-2">{option}</span>
             </label>
+             <ToastContainer />
          </div>
     );
 };
